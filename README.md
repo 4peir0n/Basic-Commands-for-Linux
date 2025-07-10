@@ -176,17 +176,22 @@
 ### 19. Creación y Administración de Particiones en Linux
 
 En Linux, puede crear particiones utilizando varias herramientas:
-*   **`Fdisk`**: Un programa desde la consola para crear particiones. Es útil en servidores sin entorno gráfico. Permite crear particiones primarias y extendidas, y dentro de estas últimas, particiones lógicas. El comando `fdisk -l` muestra el sistema de archivos y los discos. Para trabajar con un disco, se usa `fdisk /dev/sda` (reemplazando `/dev/sda` por el nombre del disco). La ayuda se puede obtener pulsando `m` dentro de `fdisk`. Puede cambiar el tipo de partición con la opción `t` y ver los tipos con `l`. Los cambios se guardan con `w`.
-*   **`Parted`**: Otro programa desde la consola para particionar discos. Permite particionar un disco en formato GPT. Ejemplos de uso incluyen `parted /dev/sdd` para entrar al disco y `mklabel gpt` para establecer el tipo de tabla de particiones. El comando `mkpart` se usa para crear particiones, especificando nombre, tipo de sistema de ficheros, inicio y fin. Se sale con `quit` o `Cntrl+Z / Cntrl+C`.
-*   **`GParted`**: Una herramienta con interfaz gráfica para la gestión de discos duros. Se puede instalar desde el Gestor de Paquetes Synaptic en Linux Mint.
+
+- **`Fdisk`**: Un programa desde la consola para crear particiones. Es útil en servidores sin entorno gráfico. Permite crear particiones primarias y extendidas, y dentro de estas últimas, particiones lógicas. El comando `fdisk -l` muestra el sistema de archivos y los discos. Para trabajar con un disco, se usa `fdisk /dev/sda` (reemplazando `/dev/sda` por el nombre del disco). La ayuda se puede obtener pulsando `m` dentro de `fdisk`. Puede cambiar el tipo de partición con la opción `t` y ver los tipos con `l`. Los cambios se guardan con `w`.
+
+- **`Parted`**: Otro programa desde la consola para particionar discos. Permite particionar un disco en formato GPT. Ejemplos de uso incluyen `parted /dev/sdd` para entrar al disco y `mklabel gpt` para establecer el tipo de tabla de particiones. El comando `mkpart` se usa para crear particiones, especificando nombre, tipo de sistema de ficheros, inicio y fin. Se sale con `quit` o `Ctrl+Z / Ctrl+C`.
+
+- **`GParted`**: Una herramienta con interfaz gráfica para la gestión de discos duros. Se puede instalar desde el Gestor de Paquetes Synaptic en Linux Mint.
 
 ### 20. Tipos de Particiones de Disco Duro (MBR)
 
 El **formato** o **sistema de archivo** de una partición (ej. NTFS, ext4) no debe confundirse con el **tipo de partición**. Si se usa un disco duro con **MBR**, existen tres tipos principales de particiones:
 
-*   **Partición Primaria**: Son las divisiones principales de un disco. Un disco duro puede tener entre una y cuatro particiones primarias, o hasta tres primarias y una extendida. Un disco físico formateado suele consistir en una única partición primaria que ocupa todo el espacio. Prácticamente, cualquier sistema operativo puede detectar estas particiones si reconoce su formato. Una partición primaria puede ser de arranque y contener un sistema operativo; una de ellas es la **partición activa**, donde el ordenador busca el arranque del sistema. Si hay múltiples sistemas operativos, la partición activa puede contener un **gestor de arranque** (como GRUB).
-*   **Partición Extendida**: También conocida como partición secundaria, su función principal es contener múltiples unidades lógicas en su interior, superando la limitación de 4 particiones primarias. Solo puede existir una partición de este tipo por disco. A diferencia de las primarias y lógicas, no soporta un sistema de archivos directamente.
-*   **Partición Lógica**: Ocupa una porción o la totalidad de la partición extendida. Se formatean con un sistema de archivos específico (FAT32, NTFS, ext3, ext4, etc.) y se les asigna una unidad, siendo reconocidas por el sistema operativo. Se pueden tener hasta 23 particiones lógicas en una extendida, aunque Linux impone un máximo de 15 (incluyendo las 4 primarias) en discos SCSI y 8963 en discos IDE.
+- **Partición Primaria**: Son las divisiones principales de un disco. Un disco duro puede tener entre una y cuatro particiones primarias, o hasta tres primarias y una extendida. Un disco físico formateado suele consistir en una única partición primaria que ocupa todo el espacio. Prácticamente, cualquier sistema operativo puede detectar estas particiones si reconoce su formato. Una partición primaria puede ser de arranque y contener un sistema operativo; una de ellas es la **partición activa**, donde el ordenador busca el arranque del sistema. Si hay múltiples sistemas operativos, la partición activa puede contener un **gestor de arranque** (como GRUB).
+
+- **Partición Extendida**: También conocida como partición secundaria, su función principal es contener múltiples unidades lógicas en su interior, superando la limitación de 4 particiones primarias. Solo puede existir una partición de este tipo por disco. A diferencia de las primarias y lógicas, no soporta un sistema de archivos directamente.
+
+- **Partición Lógica**: Ocupa una porción o la totalidad de la partición extendida. Se formatean con un sistema de archivos específico (FAT32, NTFS, ext3, ext4, etc.) y se les asigna una unidad, siendo reconocidas por el sistema operativo. Se pueden tener hasta 23 particiones lógicas en una extendida, aunque Linux impone un máximo de 15 (incluyendo las 4 primarias) en discos SCSI y 8963 en discos IDE.
 
 ### 21. Comandos para Montar Particiones
 
@@ -198,7 +203,7 @@ Una vez creadas las particiones, es necesario darles formato y montarlas para po
 | **2. Crear Carpetas de Montaje** | **`cd /mnt/`** luego **`mkdir NombreCarpeta`** (Modo 1) o **`mkdir /mnt/NombreCarpeta`** (Modo 2) | Crea una carpeta que servirá como punto de montaje para la partición. |
 | **3. Ejecutar el Montaje** | **`mount -t ext4 /dev/sbdx /mnt/NombreCarpeta`** | Monta la partición especificada (`/dev/sbdx`) en la carpeta creada (`/mnt/NombreCarpeta`). Este comando debe repetirse para cada partición. |
 | **4. Comprobar el Montaje** | **`lsblk -f`** o **`df -h`** | Verifica si el montaje se realizó correctamente y muestra el uso de disco. `df -h` muestra los sistemas de archivos y su uso en formato legible por humanos. |
-| **5. Desmontar una Partición** | **`unmount /mnt/NombreCarpeta`** | Desmonta la partición del punto de montaje. |
+| **5. Desmontar una Partición** | **`umount /mnt/NombreCarpeta`** | Desmonta la partición del punto de montaje. |
 
 ### 22. Montaje Persistente de Discos Duros (`fstab`)
 
@@ -212,4 +217,4 @@ Para que las particiones se monten automáticamente cada vez que el sistema se i
 | **4. Aplicar los Montajes (sin reiniciar)** | **`mount -a`** | Hace que todos los sistemas de archivos mencionados en `fstab` (que cumplan las opciones adecuadas) sean montados, excepto aquellos con la palabra clave `noauto`. |
 | **5. Verificar el Espacio en Disco** | **`df -Th`** | Muestra la cantidad de espacio libre en disco y los sistemas de archivos montados, en un formato legible por humanos y mostrando el tipo de sistema de archivo. |
 
-Es importante tener precaución al modificar el archivo `fstab` y se recomienda realizar pruebas en máquinas virtuales antes de aplicar cambios en entornos de producción.
+> Es importante tener precaución al modificar el archivo `fstab` y se recomienda realizar pruebas en máquinas virtuales antes de aplicar cambios en entornos de producción.
