@@ -1,3 +1,28 @@
+## Índice
+
+1. [Comandos Básicos](#1-comandos-básicos)  
+2. [Comandos de Directorios (`cd`)](#2-comandos-de-directorios-cd)  
+3. [Comandos de Listas (`ls`)](#3-comandos-de-listas-ls)  
+4. [Comandos de Búsquedas](#4-comandos-de-búsquedas)  
+5. [Historial de Comandos](#5-historial-de-comandos)  
+6. [Comandos para Trabajar con Archivos y Directorios](#6-comandos-para-trabajar-con-archivos-y-directorios)  
+7. [Comando de Eliminar (`rm`)](#7-comando-de-eliminar-rm)  
+8. [Comando de Concatenar (`cat`)](#8-comando-de-concatenar-cat)  
+9. [Comando de Mover (`mv`)](#9-comando-de-mover-mv)  
+10. [Buscar con Grep](#10-buscar-con-grep)  
+11. [Pipelines o Tuberías](#11-pipelines-o-tuberías)  
+12. [Permisos: Comando `chmod`](#12-permisos-comando-chmod)  
+13. [Comandos para Trabajar con Grupos](#13-comandos-para-trabajar-con-grupos)  
+14. [Propiedades: Comando `chown`](#14-propiedades-comando-chown)  
+15. [Atajos de Teclado de la Terminal](#15-atajos-de-teclado-de-la-terminal)  
+16. [Comandos para Trabajar con Archivos Largos](#16-comandos-para-trabajar-con-archivos-largos)  
+17. [Enlaces Duros y Simbólicos](#17-enlaces-duros-y-simbólicos)  
+18. [Nomenclatura de Discos Duros en Linux](#18-nomenclatura-de-discos-duros-en-linux)  
+19. [Creación y Administración de Particiones en Linux](#19-creación-y-administración-de-particiones-en-linux)  
+20. [Tipos de Particiones de Disco Duro (MBR)](#20-tipos-de-particiones-de-disco-duro-mbr)  
+21. [Comandos para Montar Particiones](#21-comandos-para-montar-particiones)  
+22. [Montaje Persistente de Discos Duros (`fstab`)](#22-montaje-persistente-de-discos-duros-fstab)
+
 ### 1. Comandos Básicos
 
 | Comando | Descripción |
