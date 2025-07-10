@@ -1,9 +1,3 @@
-Claro, con gusto te ayudaré a organizar la información en diferentes tablas para facilitar su comprensión, basándome en las categorías de comandos y conceptos importantes presentados en las fuentes.
-
-La terminal de Linux es, sin duda, el software que más utilizará un usuario al cambiar de sistema operativo desde Windows, siendo el centro de operaciones de cualquier sistema basado en Unix. Las fuentes proporcionan una extensa lista de comandos útiles, muchos de los cuales fueron compilados por @Mauro García.
-
-A continuación, se presentan las tablas con los comandos y sus descripciones, seguidas de información sobre enlaces, discos duros y particiones:
-
 ### 1. Comandos Básicos
 
 | Comando | Descripción |
