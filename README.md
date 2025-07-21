@@ -121,11 +121,11 @@
 
 ### 11. Pipelines o Tuberías
 
-| Sintaxis | Descripción |
-|---|---|
-| **`[comando 1] | [comando 2] | [comando n]`** | Conectar la salida de un comando como entrada de otro. |
-| **`ls | grep [término-a-filtrar] | cat > [ruta-al-nuevo-archivo]/[nombre-para-nuevo-archivo]`** | Canalizar resultados de búsqueda filtrados a un nuevo archivo. |
-| **`history | grep "[término-a-buscar]"`** | Buscar un término específico en el historial de comandos. |
+| Descripción                                                             | Comando                                                                 |
+|------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| Comandos en tuberías                                                   | `comando1 \| comando2 \| comandoN`                                     |
+| Canalizar resultados filtrados y guardarlos en un nuevo archivo        | `ls \| grep [término-a-filtrar] \| cat > [ruta]/[nombre-archivo]`      |
+| Buscar un término específico en el historial de comandos               | `history \| grep "[término-a-buscar]"`                                 |
 
 ### 12. Permisos: Comando `chmod`
 
